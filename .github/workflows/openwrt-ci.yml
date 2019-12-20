@@ -75,7 +75,6 @@ jobs:
           rm -rf package/lean/luci-app-pptp-server
           rm -rf package/lean/luci-app-v2ray-server
           rm -rf package/lean/luci-app-verysync
-          ./scripts/feeds update -a
           ./scripts/feeds install -a
       
       
