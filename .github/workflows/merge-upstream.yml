@@ -35,7 +35,7 @@ jobs:
         git config --global user.name "lico"
 
     - name: 拉取
-      run: git pull https://github.com/coolsnowwolf/lede.git --no-edit --strategy-option ours
+      run: git pull https://github.com/coolsnowwolf/lede.git --no-edit
 
     - name: 推送
       env:
