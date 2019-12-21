@@ -88,18 +88,18 @@ jobs:
       - name: 下载编译所需源码
         run: |
           make download -j8
-          find dl -size -1024c -exec ls -l {} \;
           find dl -size -1024c -exec rm -f {} \;
-
 
 
       - name: 进行固件编译
         run: DEBIAN_FRONTEND=noninteractive make -j$(nproc) V=s
-      
+
+
       - name: 清理不必要的文件
         run: |
           find ./bin/targets/ -type d -name "packages" | xargs rm -rf {}
           find ./bin/targets/ -name "*rootfs*img*" | xargs rm -rf {}
+
 
       - name : 上传固件
         uses: actions/upload-artifact@master
