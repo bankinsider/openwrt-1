@@ -68,9 +68,9 @@ jobs:
           rm -rf feeds/lienol/package/ipt2socks
           rm -rf feeds/lienol/package/shadowsocksr-libev
           rm -rf feeds/lienol/package/pdnsd-alt
+          rm -rf feeds/lienol/lienol/luci-app-kodexplorer
           rm -rf package/lean/kcptun
           rm -rf package/lean/verysync
-          rm -rf package/lean/luci-app-kodexplorer
           rm -rf package/lean/luci-app-pppoe-relay
           rm -rf package/lean/luci-app-pptp-server
           rm -rf package/lean/luci-app-v2ray-server
@@ -88,7 +88,9 @@ jobs:
       - name: 下载编译所需源码
         run: |
           make download -j8
+          find dl -size -1024c -exec ls -l {} \;
           find dl -size -1024c -exec rm -f {} \;
+
 
 
       - name: 进行固件编译
