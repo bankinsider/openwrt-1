@@ -27,6 +27,9 @@ sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/usb_printer.lua
 sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/xunlei.lua
 sed -i 's/services/nas/g'  /usr/lib/lua/luci/view/minidlna_status.htm
 
+uci set network.lan.ipaddr=192.168.9.1
+uci commit network
+
 uci set minidlna.config.enabled=0
 uci commit minidlna
 /etc/init.d/minidlna enable
