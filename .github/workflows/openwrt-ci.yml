@@ -65,6 +65,7 @@ jobs:
           ./scripts/feeds update -a
           rm -rf feeds/lienol/package/v2ray
           rm -rf feeds/lienol/package/trojan
+          rm -rf feeds/lienol/package/openssl1.1
           rm -rf feeds/lienol/package/ipt2socks
           rm -rf feeds/lienol/package/shadowsocksr-libev
           rm -rf feeds/lienol/package/pdnsd-alt
@@ -75,6 +76,7 @@ jobs:
           rm -rf package/lean/luci-app-pptp-server
           rm -rf package/lean/luci-app-v2ray-server
           rm -rf package/lean/luci-app-verysync
+          ./scripts/feeds update -a
           ./scripts/feeds install -a
       
       
