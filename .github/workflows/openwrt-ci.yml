@@ -94,7 +94,8 @@ jobs:
 
 
       - name: 进行固件编译
-        run: DEBIAN_FRONTEND=noninteractive make -j$(nproc) V=s
+        run: |
+          make -j$(nproc) || make -j1 V=s
 
 
       - name: 清理不必要的文件
